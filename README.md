@@ -3,7 +3,7 @@
 - [ ] 1-sql-injection (Matt)
 - [ ] 2-buffer-overflow (Raghav)
 - [ ] 3-exploitable-server (Raghav, Sid)
-- [ ] 4-bad-auth (Matt)
+- [ ] 4-bad-auth (John)
 - [ ] 5-bad-uploads (Matt)
 - [ ] 6-metasploit (Sid)
 - [ ] Advertising Website (Matt)
