@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Page Needs
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>Hack the Stack</title>
+    <meta name="description" content="Exploit a server for fun and profit">
+    <meta name="author" content="John Lee, Matt Molo">
+
+    <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Scripts
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+</head>
+<body>
+    <div class="top-half">
+        <div class="logo-container" id="logo-container">
+
+            <div class="description">
+                <img src="img/logo.png" class="logo" alt="Hack the Stack">
+
+                <p class="logo-desc">December 9th, 2016</p>
+                <p class="logo-desc">6 PM - 10:30 PM</p>
+                <div class="desc-cont">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfypv_AzGxU2lWrwiwGPRL4__HoG_RfZZxWHCSxQJE3RemiHQ/viewform">
+                        <div class="signup-button">Signup</div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="sponsor-list">
+                <!--<p class="logo-desc"><em>Presented by:</em></p>-->
+                <div class="sponsor">
+                    <div class="sponsor-image">
+                        <a href="http://purdueieee.org/csociety/">
+                            <img src="img/computer_society.png" alt="Computer Society">
+                        </a>
+                    </div>
+                </div>
+                <!--
+                <div class="sponsor">
+                    <div class="sponsor-image">
+                        <a href="http://purdueieee.org/csociety/">
+                            <img src="img/computer_society.png" alt="Computer Society">
+                        </a>
+                    </div>
+                </div>
+                -->
+            </div>
+
+        </div>
+
+        <div class="content">
+            <div class="card">
+                <div class="header">
+                    <div class="header-element">What is Hack The Stack?</div>
+                </div>
+                <div class="card-content">
+                    Hack the Stack is an event focused on learning about common security vulnerabilities and how they are exploited. The competition will range from web based hacks, to protocol attacks, and memory leaks. Teams can be up to 4 and will be given points for challenges completed. Winners will receive prizes!
+                </div>
+                <div class="header">
+                    <div class="header-element">What can I do there?</div>
+                </div>
+                <div class="card-content">
+                    The challenges will be set up so hints will be available as time progresses or if everyone gets stuck. We will also go over the exploits and how to perform them at the end. Even if you aren't sure you'll be able to do something, you will come out learning something!
+                </div>
+                <div class="header">
+                    <div class="header-element">How do I get started?</div>
+                </div>
+                <div class="card-content">
+                    RSVP with the link above, and we'll consider you part of the competition! If something changes please be sure to email us and let us know at mmolo@purdue.edu
+                </div>
+                <div class="header">
+                    <div class="header-element">What do I bring, and where?</div>
+                </div>
+                <div class="card-content">
+                    All you need to do is bring your laptop, a charger, and yourself! The event takes place in Forney G124. On your laptop, you'll also need to some type of SSH client. 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="particle-js"> </div>
+
+    <script>
+        particlesJS("particle-js", {"particles": { "number": { "value":80, "density": { "enable":true, "value_area":800} }, 
+        "color":{"value":"#ffffff"}, "shape":{"type":"circle", "stroke":{"width":0, "color":"#000000"}, "polygon":{"nb_sides":5},
+        "image":{"src":"img/github.svg", "width":100, "height":100}}, "opacity":{"value":0.5, "random":false, "anim":{"enable":false,
+        "speed":1, "opacity_min":0.1, "sync":false}}, "size":{"value":3, "random":true, "anim":{"enable":false, "speed":40, "size_min":0.1,
+        "sync":false}}, "line_linked":{"enable":true, "distance":150, "color":"#ffffff", "opacity":0.4, "width":1}, "move":{"enable":true,
+        "speed":6, "direction":"none", "random":false, "straight":false, "out_mode":"out", "bounce":false, "attract":{"enable":false, "rotateX":600,
+        "rotateY":1200}}}, "interactivity":{"detect_on":"canvas", "events":{"onhover":{"enable":false, "mode":"repulse"}, "onclick":{"enable":false,
+        "mode":"push"}, "resize":true}, "modes":{"grab":{"distance":400, "line_linked":{"opacity":1}}, "bubble":{"distance":400, "size":40,
+        "duration":2, "opacity":8, "speed":3}, "repulse":{"distance":200, "duration":0.4}, "push":{"particles_nb":4},
+        "remove":{"particles_nb":2}}}, "retina_detect":true});
+    </script>
+</body>
+</html>
