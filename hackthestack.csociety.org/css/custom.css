@@ -19,7 +19,9 @@ a:link,
 a:hover,
 a:active,
 a:visited {
-    text-decoration: none; color: inherit; outline: none;
+    text-decoration: none;
+    color: #006666;
+    outline: none;
 }
 
 html {
@@ -112,7 +114,6 @@ html {
 }
 
 .sponsor > .sponsor-image {
-    background: rgba(255,255,255,0.2);
     height: 100%;
     padding: 1em;
 }
