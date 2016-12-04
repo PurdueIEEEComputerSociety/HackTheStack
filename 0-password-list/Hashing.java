@@ -1,12 +1,12 @@
 /**
  * Created by Bobby on 12/2/2016.
  *
- * The algorithm for this hashing function is as follow;
- * 1. Add the salt at the beginning of the String
- * 2. Obtain a seed number in order to generate pseudorandom number by using the salted String
- * 3. Expand the salted String polynomial expansion, with the pseudorandom numbers as coefficients
- * 4. Scale it by multiply a prime number and make sure it is 8 digits
- * 5. Hash the scaled result
+ * The algorithm for this hashing function is as follows (Step 2 can be omit):
+ * 1. Add the salt at the beginning of the string
+ * 2. Obtain a seed number to generate pseudorandom number by using the salted string
+ * 3. Expand the salted sring using polynomial expansion
+ * 4. Scale it by multiplying a prime number and make it 8 digits
+ * 5. Convert the scaled number to alphanumeric character
  * 6. Iterate step 3,4,5 for 4 times to get 16-byte hashed string
  */
 
@@ -25,8 +25,9 @@ public class Hashing {
         return seed % 37;
     }
 
-    //expand the key by polynomial expansion
-    public static int expansion(String key, int power){
+    //expand the key by polynomial expansion, version 0.1
+    //0 confliction for CommonPassword
+    public static int expansion1(String key, int power){
         int sum = 0;
         int seed = getRandomSeed(key);
         Random rand = new Random(seed);
@@ -35,6 +36,22 @@ public class Hashing {
             int val = (int)key.charAt(i);
             for (int j = power; j <= 4; j++) {
                 sum += (int)((rand.nextInt() % 13) * Math.pow(val, 4-j));
+            }
+        }
+        return sum;
+    }
+
+    //expand the key by polynomial expansion, version 0.2
+    //50 conflictions for CommonPassword
+    public static int expansion2(String key, int power){
+        int sum = 0;
+        int[] prime = {11,7,5,3};
+
+        for (int i = 0; i < key.length(); i++) {
+            int val = (int)key.charAt(i);
+            for (int j = power; j <= 4; j++) {
+                //sum += prime[j-1] * Math.pow(val, 4-j);
+                sum += Math.pow(val, 4-j);
             }
         }
         return sum;
@@ -60,10 +77,16 @@ public class Hashing {
         return hashed;
     }
 
-    public static String hashing(String key){
+    public static String hashing(String key, int method){
         String after = "";
-        for (int i = 1; i <= 4; i++) {
-            after += hashIt(scale(expansion(SALT + key, i)));
+        if (method == 1) {
+            for (int i = 1; i <= 4; i++) {
+                after += hashIt(scale(expansion1(SALT + key, i)));
+            }
+        } else if (method == 2) {
+            for (int i = 1; i <= 4; i++) {
+                after += hashIt(scale(expansion2(SALT + key, i)));
+            }
         }
         return after;
     }
