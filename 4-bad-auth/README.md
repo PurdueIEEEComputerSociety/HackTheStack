@@ -15,9 +15,9 @@ Present the code to one of the hosts to win!
 - It is not SQL injection.
 - Use XSS
 - Have them look at the 'recent users' area.
-- If they are having problems with the max entered size, have them upload a script onto https://gist.github.com/ and embed it as their username.
+- If they are having problems with the max entered size, have them upload a script onto https://gist.github.com/ and use the RAW link as their created user's handle.
 - Getting around CORS
-  - Try creating an \<img> with the data included as a GET parameter.
+  - Try creating an \<img> with the data included as a GET parameter in the `src`.
   
 # Hosts Only . . .
   
