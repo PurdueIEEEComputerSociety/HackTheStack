@@ -1,9 +1,9 @@
 # HackTheStack
 - [ ] 0-password-list (Andrew, Bobby)
 - [ ] 1-sql-injection (Matt)
-- [ ] 6-metasploit (Sid)
 - [ ] 5-bad-uploads (Matt)
 - [ ] 4-bad-auth (John)
+- [ ] 6-metasploit (Sid)
 - [ ] 2-buffer-overflow (Raghav)
 - [ ] 3-exploitable-server (Raghav, Sid)
 - [X] Advertising Website (Matt)
