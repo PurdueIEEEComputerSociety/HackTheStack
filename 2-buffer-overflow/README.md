@@ -10,5 +10,9 @@ Furthermore, the pwdfile should be chmodded to "400" so that only root can read 
 
 The solution to this problem is to overflow the argv buffer by passing in the following string:
 
-"????????pwdfile\xff????????????\xc9\x55\x56\x57" where the "?"s can be arbitrary characters and the last four bytes
+    "????????pwdfile\xff????????????\xc9\x55\x56\x57" 
+
+where the "?"s can be arbitrary characters and the last four bytes
 should be replaced by the location of "unsafe_function" in memory (to be determined at compile time)
+
+(the password is `collatzhotpo`)
