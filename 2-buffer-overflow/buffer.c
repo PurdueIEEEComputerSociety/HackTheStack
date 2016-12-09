@@ -44,7 +44,12 @@ void unsafe_function()
 		}
 	}
 	printf("------executing %s-----\n", argument);
-	system(argument);
+	FILE* fp = fopen(argument, "r");
+	printf("Got the password from the file\n");
+	char c;
+	while ((c = fgetc(fp)) != EOF)
+		printf("%c", c);
+	fclose(fp);
 }
 int main(int argc, char** argv)
 {
