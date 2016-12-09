@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 
 <?php
-    $password = "challenge6";
-
+    $password = "collatzhotpo";
     session_start();
 ?>
 

@@ -2,7 +2,6 @@
 
 <?php
     $password = "challenge5";
-
     session_start();
 ?>
 
@@ -66,11 +65,7 @@
                     <?php if ($_POST['password'] == $password || $_SESSION['challenge5'] == true) { ?>
                         <?php $_SESSION['challenge5'] = true; ?>
 
-                        <h1>Buffer Overflow</h1>
-
-
-                        <br><br>
-                        <p><a href="challenge6.php">&gt; Move on to Challenge 6</a></p>
+                        <h1>Metasploitable</h1>
 
                     <?php } else { ?>
                         <form method="post" action="challenge5.php">

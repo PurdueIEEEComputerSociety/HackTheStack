@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 
 <?php
-    $password = "challenge3";
-
+    $password = "mimemimemime";
     session_start();
 ?>
 
@@ -68,8 +67,19 @@
 
                         <h1>Bad Authentication</h1>
 
+                        <p>This challenge is for you to login as an admin for one of the hottest forum
+                        sites to come out since Yahoo! Answers. In the developers' haste to get the product
+                        out, they missed some vital code to keep some nasty ne'er-do-wells from getting access
+                        to their site.</p>
 
-                        <br><br>
+                        <p>However, the creators aren't completely forgetful, there are some roadblocks in the way
+                        to do this. Don't be discouraged! Most of them are still insecure if you stretch the limits.</p>
+
+                        <p>There's a rumor that one of the admins have been logging in quite often. Login as them and
+                        extract a super-secret admin code that they use for everything. Seriously. They never took ECE 404/CS 426.</p>
+
+                        <p>Good Luck!</p>
+
                         <p><a href="challenge4.php">&gt; Move on to Challenge 4</a></p>
 
                     <?php } else { ?>

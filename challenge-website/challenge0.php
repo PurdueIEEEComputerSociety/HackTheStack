@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+
+<?php
+    $password = "challenge0";
+    session_start();
+?>
+
 <html lang="en">
 <head>
     <!-- Basic Page Needs
@@ -56,7 +62,19 @@
             <div class="col-12-md">
                 <div class="well">
                     <p><a href="index.php">&lt; Back to Challenge Page</a></p>
-                    <h1>Password Challenge</h1>
+                    <?php if ($_POST['password'] == $password || $_SESSION['challenge0'] == true) { ?>
+                        <?php $_SESSION['challenge0'] = true; ?>
+                        <h1>Password Challenge</h1>
+
+                    <?php } else { ?>
+                        <form method="post" action="challenge0.php">
+                            <div class="form-group">
+                                <label>Challenge 0 Password</label>
+                                <input type="text" class="form-control" placeholder="Password" name="password">
+                            </div>
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </form>
+                    <?php } ?>
                 </div>
             </div>
         </div>

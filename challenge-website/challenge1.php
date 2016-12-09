@@ -2,7 +2,6 @@
 
 <?php
     $password = "challenge1";
-
     session_start();
 ?>
 
@@ -68,8 +67,15 @@
 
                         <h1>SQL Injections</h1>
 
+                        <p>Welcome to the first challenge! There is a website located on your webserver
+                        at http://yourseverip/sql_inj/, with a basic form login. Unfortunately, the person
+                        that programmed it doesn't know SQL very well.. </p>
 
-                        <br><br>
+                        <p>You have an account set up as bobby_t@csociety.org with the password as password5.
+                        However, in order to receive the secret code you need to login as admin@csociety.org</p>
+
+                        <p>Good luck!</p>
+
                         <p><a href="challenge2.php">&gt; Move on to Challenge 2</a></p>
 
                     <?php } else { ?>

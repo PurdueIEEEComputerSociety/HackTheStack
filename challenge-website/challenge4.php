@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 
 <?php
-    $password = "challenge4";
-
+    $password = "SUPER_HAPPY_FUNTIEEEME";
     session_start();
 ?>
 
@@ -66,10 +65,17 @@
                     <?php if ($_POST['password'] == $password || $_SESSION['challenge4'] == true) { ?>
                         <?php $_SESSION['challenge4'] = true; ?>
 
-                        <h1>Metasploitable</h1>
+                        <h1>Buffer Overflow</h1>
 
+                        <p>A buffer overflow is when too much data is copied to a buffer, and starts overwriting other information.
+                        Luckily, our bad programmer strikes again! A compiled file is located on your server, and accepts user input
+                        as an argument. However, the program also runs as a different user, with different permissions. You can't read
+                        the pwdfile located there, but this program could..</p>
 
-                        <br><br>
+                        <p>Hint: Take a look at the source code and check out the program with GDB.</p>
+
+                        <p>Good luck!</p>
+
                         <p><a href="challenge5.php">&gt; Move on to Challenge 5</a></p>
 
                     <?php } else { ?>

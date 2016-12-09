@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 
 <?php
-    $password = "challenge2";
-
+    $password = "littlebobbytables327";
     session_start();
 ?>
 
@@ -68,8 +67,16 @@
 
                         <h1>Bad Uploads</h1>
 
+                        <p>The bad programmer got another job, and that was to create an upload site to change
+                        your profile photo. Only images should be available to upload, but that code isn't perfect either...</p>
 
-                        <br><br>
+                        <p>This challenge is located at http://yourserverip/2baduploads/ Uploaded files go into the /2baduploads/uploads/ directory.</p>
+
+                        <p>The password to this challenge is located in /2baduploads/password.php, but since it's a php
+                        comment, it is stripped when an outside request is made. Maybe if there was a way to run arbitrary code...</p>
+
+                        <p>Good luck!</p>
+
                         <p><a href="challenge3.php">&gt; Move on to Challenge 3</a></p>
 
                     <?php } else { ?>

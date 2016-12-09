@@ -86,18 +86,13 @@
                             <td><a href="validate.php">Validate Code</a></td>
                         </tr>
                         <tr>
-                            <td><a href="challenge4.php">Metasploitable</a></td>
+                            <td><a href="challenge4.php">Buffer Overflow</a></td>
                             <td>8:20 PM</td>
                             <td><a href="validate.php">Validate Code</a></td>
                         </tr>
                         <tr>
-                            <td><a href="challenge5.php">Buffer Overflow</a></td>
+                            <td><a href="challenge5.php">Metasploitable</a></td>
                             <td>9:00 PM</td>
-                            <td><a href="validate.php">Validate Code</a></td>
-                        </tr>
-                        <tr>
-                            <td><a href="challenge6.php">Exploitable Server</a></td>
-                            <td>9:40 PM</td>
                             <td><a href="validate.php">Validate Code</a></td>
                         </tr>
                     </tbody>
