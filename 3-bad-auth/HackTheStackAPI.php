@@ -127,17 +127,26 @@ class HackTheStackAPI {
             $result = self::query($sql);
             $row = $result->fetch_assoc();
             if (is_null($row)) throw new Exception('Invalid username/password combination');
+
+            $isAdmin = $row['username'] == 'thebestadmin';
+
             if (!$isAdminPage) {
                 $newAuthToken = md5(uniqid(rand(), true));
                 self::$response['authToken'] = $newAuthToken;
                 $sql = 'UPDATE login SET authToken="'.$newAuthToken.'" WHERE username="'.$row['username'].'";';
                 self::$response['debug'] = $row;
                 $result = self::query($sql);
+
+                if ($isAdmin) {
+                    $tokenFile = fopen("authTokenStorage.txt", "w") or die("Unable to open file!");
+                    fwrite($tokenFile, $newAuthToken);
+                    fclose($tokenFile);
+                }
             }
 
-            if ($row['username'] == 'thebestadmin') {
+            if ($isAdmin) {
                 self::$response['message'] = 'Successfully logged in as an admin!';
-                self::$response['url'] = 'admin.php';
+                self::$response['url'] = 'adminsecretpage.php';
                 return true;
             } else {
                 self::$response['message'] = 'Successfully logged in as '.htmlentities($row['username']);
