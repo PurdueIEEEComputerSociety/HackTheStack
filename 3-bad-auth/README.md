@@ -17,9 +17,9 @@ Resources: There's a file called `Log.php` that you can pass GET data to. Openin
 - It is not SQL injection.
 - Use XSS
 - Have them look at the 'recent users' area.
-- If they are having problems with the max entered size, have them upload a script onto https://gist.github.com/ and use the RAW link as their created user's handle.
+<s>- If they are having problems with the max entered size, have them upload a script onto https://gist.github.com/ and use the RAW link as their created user's handle.
 - Getting around CORS
-  - Try creating an \<img> with the data included as a GET parameter in the `src`.
+  - Try creating an \<img> with the data included as a GET parameter in the `src`.</s>
   
 # Hosts Only . . .
   
