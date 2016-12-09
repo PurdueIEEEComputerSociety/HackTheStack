@@ -11,6 +11,8 @@ There's a rumor that one of the admins have been logging in quite often. Login a
 
 Present the code to one of the hosts to win!
 
+Resources: There's a file called `Log.php` that you can pass GET data to. Opening the page will show the last request made to it. To post data to it, call `Log.php?data={INSERT DATA HERE}`
+
 ## Some hints *[only show if necessary]*
 - It is not SQL injection.
 - Use XSS
