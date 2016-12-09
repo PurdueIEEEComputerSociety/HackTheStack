@@ -70,7 +70,7 @@ class HackTheStackAPI {
     public static function createUser($user, $password, $handle) {
         try {
             self::sanitizeInput($user);
-            self::sanitizeInput($handle);
+            self::sanitizeInput($handle, false);
             $hash = crypt($password, '$2y$10$1291392930123120932109$');
             $sql = 'SELECT username FROM login WHERE username = "'.$user.'";';
             $result = self::query($sql);
@@ -92,8 +92,8 @@ class HackTheStackAPI {
     }    
 
 
-    public static function sanitizeInput(&$input) {
-        $input = strtolower($input);
+    public static function sanitizeInput(&$input, $lowercase = true) {
+        $input = ($lowercase) ? strtolower($input) : $input;
 
         if (strpos($input, '<script>') !== false) {
             throw new Exception('XSS detected. Refused request.');
@@ -101,7 +101,7 @@ class HackTheStackAPI {
 
         $input = self::$db->real_escape_string($input);
 
-        if (strlen($input) > 64) {
+        if (strlen($input) > 200) {
             throw new Exception('Input exceeded 64 character limit. Refused request.');
         }
     }
