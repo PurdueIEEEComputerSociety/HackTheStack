@@ -1,0 +1,143 @@
+html,body {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    font-family: Helvetica, Arial;
+    font-weight: 300;
+}
+
+h1,h2,h3,button,input {
+    color: #333;
+}
+
+* {
+    font-weight: 300;
+}
+
+#login-container {
+    top: 110px;
+    position: relative;
+    width: 600px;
+    height: 200px;
+    text-align: right;
+    float: right;
+}
+
+#login-container input,button {
+    font-size: 14px;
+    display: inline-block;
+}
+
+#login-container input {
+    width: 200px;
+    padding: 5px;
+}
+
+#login-container button {
+    height: 30px;
+    font-size: 16px;
+    width: 100px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+
+#login-container button:hover {
+    background: #f3f3f3;
+}
+
+.banner {
+    width: 100%;
+    height: 150px;
+    background: #ccc;
+}
+
+.footer {
+    position: static;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: #ddd;   
+    font-size: 10px;
+    text-align: center;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+}
+
+#title {
+    position: absolute;
+    padding: 30px;
+    font-size: 35px;
+    width: 400px;
+}
+
+.subtitle {
+    position: absolute;
+    top: 80px;
+    left: 55px;
+    font-size: 17px;
+    padding: 0px;
+}
+
+#response {
+    font-size: 15px;
+    margin: 0;
+}
+
+#recentUsers {
+    position: relative;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    text-align: center;
+
+    float: none;
+    margin-top: 200px;
+    width: 100%;
+    height: 100px;
+}
+
+#recentUsers p {
+    font-size: 10px;
+    float: left;
+    padding: 5px;
+    border: 1px solid #eee;
+}
+
+#recentUsers p:hover {
+    background: #eee;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+#main {
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+#main > div {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+#main input,button {
+    box-sizing: border-box;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+}
+
+#main button:hover {
+    background: #ddd;
+}
+
+@media (max-width: 1024px) {
+
+}
