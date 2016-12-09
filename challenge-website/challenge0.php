@@ -66,6 +66,12 @@
                         <?php $_SESSION['challenge0'] = true; ?>
                         <h1>Password Challenge</h1>
 
+                        <p>As a side competition, there is a hashed password list located <a href="password_list.txt">here</a> (warning, large file).
+                        <p>Those that crack the most passwords will get extra points! Note: please make sure to save which line the password is on that you cracked.
+                        Also, the length of the password precedes the hash, i.e. first line is the length of the original password, second line is the hash, and so on</p>
+
+                        <p>Hint: password == 5f4dcc3b5aa765d61d8327deb882cf99</p>
+
                     <?php } else { ?>
                         <form method="post" action="challenge0.php">
                             <div class="form-group">
