@@ -1,5 +1,7 @@
 # HackTheStack
 
+Participants will need the password to log into a Kali Linux VM for the challenge to access Metasploit
+
 This is simple hack challenge where you use the tool Metasploit to exploit a known vulnerability in a PHP server, with the version 5.3.12 and 5.4.2.
 This exploit is also called PHP CGI arg injection, where the exploit takes advantage of -d flag to set the php.ini directives to achieve code execution. In short this leads to access to CGI binaries, and can run your code remotely.
 
