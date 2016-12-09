@@ -61,40 +61,35 @@
                       <tr>
                         <th>Challenge</th>
                         <th>Time Released</th>
-                        <th>Get Points</th>
                       </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td><a href="challenge0.php">Password Challenge</a></td>
                             <td>6:20 PM</td>
-                            <td><a href="validate.php">Validate Code</a></td>
                         </tr>
                         <tr>
                             <td><a href="challenge1.php">SQL Injection</a></td>
                             <td>6:20 PM</td>
-                            <td><a href="validate.php">Validate Code</a></td>
                         </tr>
                         <tr>
                             <td><a href="challenge2.php">Bad Uploads</a></td>
                             <td>7:00 PM</td>
-                            <td><a href="validate.php">Validate Code</a></td>
                         </tr>
                         <tr>
                             <td><a href="challenge3.php">Bad Authentication</a></td>
                             <td>7:40 PM</td>
-                            <td><a href="validate.php">Validate Code</a></td>
                         </tr>
                         <tr>
                             <td><a href="challenge4.php">Buffer Overflow</a></td>
                             <td>8:20 PM</td>
-                            <td><a href="validate.php">Validate Code</a></td>
                         </tr>
+                        <!--
                         <tr>
                             <td><a href="challenge5.php">Metasploitable</a></td>
                             <td>9:00 PM</td>
-                            <td><a href="validate.php">Validate Code</a></td>
                         </tr>
+                        -->
                     </tbody>
                 </table>
                 </div>

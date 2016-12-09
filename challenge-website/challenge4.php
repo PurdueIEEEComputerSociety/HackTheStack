@@ -76,7 +76,7 @@
 
                         <p>Good luck!</p>
 
-                        <p><a href="challenge5.php">&gt; Move on to Challenge 5</a></p>
+                        <!-- <p><a href="challenge5.php">&gt; Move on to Challenge 5</a></p> -->
 
                     <?php } else { ?>
                         <form method="post" action="challenge4.php">
