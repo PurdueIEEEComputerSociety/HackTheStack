@@ -100,10 +100,6 @@ class HackTheStackAPI {
         }
 
         $input = self::$db->real_escape_string($input);
-
-        if (strlen($input) > 200) {
-            throw new Exception('Input exceeded 64 character limit. Refused request.');
-        }
     }
 
     public static function query($sql) {
