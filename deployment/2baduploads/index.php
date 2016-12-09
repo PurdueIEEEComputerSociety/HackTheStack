@@ -10,6 +10,10 @@
     ––––––––––––––––––––––––––––––––––––––––––––––––––  -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- No Mobile Scaling (Uncomment if needed)
+    ––––––––––––––––––––––––––––––––––––––––––––––––––
+    <meta name="viewport" content="width=device-width, user-scalable=no"> -->
+
     <!-- CSS
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,600,900" rel="stylesheet">
@@ -17,6 +21,10 @@
     <!-- Scripts
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <!-- Favicon
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -42,56 +50,25 @@
             font-size: 18px;
             color: #444;
 
-            background-color: #131f25;
+            background-color: #fefefe;
 
             /* Keep things in middle, small padding on top/bottom */
             margin: 40px auto;
-            max-width: 1000px;
+            max-width: 650px;
             padding: 0 10px;
         }
     </style>
 
     <body>
         <div class="row">
-            <div class="col-12-md">
+            <div class="col-4-md col-off-4-md">
                 <div class="well">
-                    <h1>Welcome to HackTheStack!</h1>
-                <table class="table table-striped">
-                    <thead>
-                      <tr>
-                        <th>Challenge</th>
-                        <th>Time Released</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><a href="challenge0.php">Password Challenge</a></td>
-                            <td>6:20 PM</td>
-                        </tr>
-                        <tr>
-                            <td><a href="challenge1.php">SQL Injection</a></td>
-                            <td>6:20 PM</td>
-                        </tr>
-                        <tr>
-                            <td><a href="challenge2.php">Bad Uploads</a></td>
-                            <td>7:00 PM</td>
-                        </tr>
-                        <tr>
-                            <td><a href="challenge3.php">Bad Authentication</a></td>
-                            <td>7:40 PM</td>
-                        </tr>
-                        <tr>
-                            <td><a href="challenge4.php">Buffer Overflow</a></td>
-                            <td>8:20 PM</td>
-                        </tr>
-                        <!--
-                        <tr>
-                            <td><a href="challenge5.php">Metasploitable</a></td>
-                            <td>9:00 PM</td>
-                        </tr>
-                        -->
-                    </tbody>
-                </table>
+                    <form action="upload.php" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                        Select image to upload:<br>
+                        <input type="file" name="uploadedfile"><br><br>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>
