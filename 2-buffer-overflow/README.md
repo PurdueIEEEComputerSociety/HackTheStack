@@ -1,6 +1,7 @@
 # HackTheStack
 There are two files in this folder: buffer.c and pwdfile
-Both of these should be included in the problem directory, but a compiled buffer.c should also be included
+Both of these should be included in the problem directory, but a compiled buffer.c should also be included.
+
 Compile with:
 
     gcc -m32 -fno-stack-protector -g buffer.c -o buffer
