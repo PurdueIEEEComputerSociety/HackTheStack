@@ -100,3 +100,13 @@ to the `login` table, which exists in the `challenge` database.
 The above script includes the login credentials so you'll be good.
 
 As for the cron. go to the `cronadmin` folder and npm install. Have the cron run `node index.js` and ensure it works. If it doesn't, login as the admin to get an authtoken logged by going into the website and logging in as `thebestadmin` `securepassword1`. Once there it should create a file named `authTokenStorage.txt` which contains the authToken (I'm lazy, okay?)
+
+# Solution Script
+There exists `Log.php` which will aid them in repeating the last get request with a `data` parameter in it. 
+```
+authTokenLogin = function(authToken) {
+  $.get( "log.php?data=" + authToken, function( data ) {
+  });
+}
+```
+Using this will replace the authToken login and allow the user to get the data by going to `directory/log.php`
